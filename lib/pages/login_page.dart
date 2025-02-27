@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
 
 
 
-  void login(){
+  void signin(){
 
   }
 
@@ -35,18 +35,18 @@ class _LoginPageState extends State<LoginPage> {
                 Text("Welcome Back", style: TextStyle(fontSize: 20)),
                 const SizedBox(height: 20),
                 MyTextField(
-                  controller: TextEditingController(),
+                  controller: emailController,
                   hintText: "Email",
                   oscureText: false,
                 ),
                 const SizedBox(height: 30),
                 MyTextField(
-                  controller: TextEditingController(),
+                  controller: passwordController,
                   hintText: "Password",
                   oscureText: true,
                 ),
                 const SizedBox(height: 30),
-                MyButton(onTap: login, text: "Sign In"),
+                MyButton(onTap: () {}, text: "Sign In"),
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
