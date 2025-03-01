@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testchatscreen/pages/register_page.dart';
+import 'package:testchatscreen/services/auth/login_or_register.dart';
 import 'pages/login_page.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RegisterPage()
+      home: LoginOrRegister()
     );
   }
 }
