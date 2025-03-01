@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "103965008615",
+    "project_id": "testchatscreen",
+    "storage_bucket": "testchatscreen.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103965008615:android:896b66adb59f0c5b73b842",
+        "android_client_info": {
+          "package_name": "com.example.testchatscreen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBejrm2I4LUwSM3dX-kxpgKDL4QZK_g_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

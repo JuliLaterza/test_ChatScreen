@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:testchatscreen/pages/register_page.dart';
 import 'package:testchatscreen/services/auth/login_or_register.dart';

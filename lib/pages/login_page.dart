@@ -40,13 +40,13 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: "Email",
                   oscureText: false,
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 10),
                 MyTextField(
                   controller: passwordController,
                   hintText: "Password",
                   oscureText: true,
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
                 MyButton(onTap: signin, text: "Sign In"),
                 const SizedBox(height: 20),
                 Row(
@@ -54,8 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                   const SizedBox(width: 20),
                   const Text("Dont have an account?"),
+                  const SizedBox(width: 5),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: widget.onTap,
                     child: Text("Sign Up!", style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                 ])
