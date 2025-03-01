@@ -3,7 +3,8 @@ import 'package:testchatscreen/components/my_button.dart';
 import 'package:testchatscreen/components/my_text_field.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  final void Function()? onTap;
+  const RegisterPage({super.key, required this.onTap});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -52,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   oscureText: true,
                 ),
                 const SizedBox(height: 30),
-                MyButton(onTap: (){}, text: "Sign Up"),
+                MyButton(onTap: signUp, text: "Sign Up"),
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -60,10 +61,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(width: 20),
                   const Text("Already a member?"),
                   GestureDetector(
-                    onTap: (){},
+                    onTap: widget.onTap,
                     child: Text("Login Now", style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
-                ],)
+                ])
               ],
             ),
           ),

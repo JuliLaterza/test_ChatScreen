@@ -3,7 +3,8 @@ import 'package:testchatscreen/components/my_button.dart';
 import 'package:testchatscreen/components/my_text_field.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final void Function()? onTap;
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -46,18 +47,18 @@ class _LoginPageState extends State<LoginPage> {
                   oscureText: true,
                 ),
                 const SizedBox(height: 30),
-                MyButton(onTap: () {}, text: "Sign In"),
+                MyButton(onTap: signin, text: "Sign In"),
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                   const SizedBox(width: 20),
-                  const Text("Don't have an account?"),
-                  TextButton(
-                    onPressed: (){},
-                    child: const Text("Sign Up", style: TextStyle(fontWeight: FontWeight.bold)),
-                  )
-                ],)
+                  const Text("Dont have an account?"),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Text("Sign Up!", style: TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                ])
               ],
             ),
           ),
