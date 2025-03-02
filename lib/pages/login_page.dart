@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:testchatscreen/components/my_button.dart';
 import 'package:testchatscreen/components/my_text_field.dart';
+
+import '../services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
@@ -18,6 +21,15 @@ class _LoginPageState extends State<LoginPage> {
 
 
   void signin(){
+    //get the auth service
+
+    final authService = Provider.of<AuthService>(context, listen: false);
+
+    try {
+      authService.signInWithEmailAndPassword(emailController.text, passwordController.text);
+    } catch (e) {
+      print(e);
+    }
 
   }
 
