@@ -23,8 +23,9 @@ class HomePage extends StatelessWidget {
             icon: Icon(Icons.logout),
             onPressed: logout,
           )
-        ],
+        ]
       ),
+      drawer: Drawer(),
     );
   }
 }
