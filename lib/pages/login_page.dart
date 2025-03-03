@@ -15,20 +15,24 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
 
 
 
-  void signin(){
+  void login() async {
     //get the auth service
-
-    final authService = Provider.of<AuthService>(context, listen: false);
+    final authService = AuthService();
 
     try {
-      authService.signInWithEmailAndPassword(emailController.text, passwordController.text);
+      await authService.signInWithEmailAndPassword(_emailController.text, _passwordController.text);
     } catch (e) {
-      print(e);
+      showDialog(
+        // ignore: use_build_context_synchronously
+        context: context, 
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+      ));
     }
 
   }
@@ -48,18 +52,18 @@ class _LoginPageState extends State<LoginPage> {
                 Text("Welcome Back", style: TextStyle(fontSize: 20)),
                 const SizedBox(height: 20),
                 MyTextField(
-                  controller: emailController,
+                  controller: _emailController,
                   hintText: "Email",
                   oscureText: false,
                 ),
                 const SizedBox(height: 10),
                 MyTextField(
-                  controller: passwordController,
+                  controller: _passwordController,
                   hintText: "Password",
                   oscureText: true,
                 ),
                 const SizedBox(height: 20),
-                MyButton(onTap: signin, text: "Sign In"),
+                MyButton(onTap: login, text: "Sign In"),
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
