@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testchatscreen/components/my_button.dart';
 import 'package:testchatscreen/components/my_text_field.dart';
+import 'package:testchatscreen/services/auth/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
@@ -18,7 +19,18 @@ class _RegisterPageState extends State<RegisterPage> {
 
 
 
-  void signUp(){
+  void signUp() {
+    final authService = AuthService();
+    
+    if (passwordController.text == confirmPasswordController.text) {
+      try {
+        authService.signUpWithEmailPassword(emailController.text, passwordController.text);
+      } catch (e) {
+        showDialog(context: context, builder: (context) => const AlertDialog(
+          title: Text("Password dont match!"),
+        ));
+      }
+    }
   }
 
   @override
