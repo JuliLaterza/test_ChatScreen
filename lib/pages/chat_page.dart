@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:testchatscreen/components/chat_bubble.dart';
 import 'package:testchatscreen/components/my_text_field.dart';
 import 'package:testchatscreen/services/auth/auth_service.dart';
 import 'package:testchatscreen/services/chat/chat_services.dart';
@@ -37,6 +38,9 @@ class ChatPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(receiverEmail),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.blueGrey[900],
+
       ),
       body: Column(
         children: [
@@ -82,7 +86,7 @@ class ChatPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: isCurrentUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
-          Text(data['message']),
+          ChatBubble(message: data['message'], isCurrentUser: isCurrentUser),
         ],
       )
       );
